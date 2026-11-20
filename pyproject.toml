@@ -1,0 +1,32 @@
+[build-system]
+requires = ["setuptools>=61"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "miniredis"
+version = "0.1.0"
+description = "用 asyncio 从零实现的迷你 Redis 服务端：RESP2 协议、五种数据结构、TTL 与 AOF"
+readme = "README.md"
+requires-python = ">=3.9"
+license = { text = "MIT" }
+authors = [{ name = "eastyou" }]
+keywords = ["redis", "asyncio", "resp", "database", "server", "educational"]
+classifiers = [
+  "Programming Language :: Python :: 3",
+  "License :: OSI Approved :: MIT License",
+  "Operating System :: OS Independent",
+  "Framework :: AsyncIO",
+  "Topic :: Database :: Database Engines/Servers",
+  "Typing :: Typed",
+]
+
+[project.scripts]
+miniredis-server = "miniredis.server:main"
+miniredis-cli = "miniredis.cli:main"
+
+[project.urls]
+Homepage = "https://github.com/eastyou/miniredis"
+Source = "https://github.com/eastyou/miniredis"
+
+[tool.setuptools]
+packages = ["miniredis"]
