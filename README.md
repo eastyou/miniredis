@@ -4,14 +4,14 @@
 [![License: MIT](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
 [![Python](https://img.shields.io/badge/python-3.9%2B-brightgreen.svg)](pyproject.toml)
 
-用 Python 标准库从零写一个 Redis：asyncio TCP 服务端、RESP2 线协议、五种数据结构、键过期、AOF 持久化。**零第三方依赖**，`pip install -e .` 之后就能用 `redis-cli` 连上来。
+用 Python 标准库从零写一个 Redis：asyncio TCP 服务端、RESP2 线协议、四种数据结构、键过期、AOF 持久化。**零第三方依赖**，`pip install -e .` 之后就能用 `redis-cli` 连上来。
 
 这个项目的目的不是替代 Redis，而是把「一个真实数据库服务端到底由哪些部分构成」拆开讲清楚：协议怎么分帧、过期怎么实现、并发连接怎么管理、持久化怎么重放。
 
 ## 特性
 
 - **完整 RESP2 协议**：数组请求、行内命令、流水线（pipelining）、分片到达的增量解析
-- **五种数据结构**：string、list、hash、set，以及键级别的 TTL
+- **四种数据结构**：string、list、hash、set，以及键级别的 TTL
 - **过期时间**：`EXPIRE` / `TTL` / `PERSIST`，惰性删除，时钟可注入便于测试
 - **AOF 持久化**：写命令追加落盘，重启自动重放，容忍文件末尾被截断
 - **优雅关闭**：响应 `SIGINT` / `SIGTERM`，停止监听并关闭 AOF

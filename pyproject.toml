@@ -5,7 +5,7 @@ build-backend = "setuptools.build_meta"
 [project]
 name = "miniredis"
 version = "0.1.0"
-description = "用 asyncio 从零实现的迷你 Redis 服务端：RESP2 协议、五种数据结构、TTL 与 AOF"
+description = "用 asyncio 从零实现的迷你 Redis 服务端：RESP2 协议、四种数据结构、TTL 与 AOF"
 readme = "README.md"
 requires-python = ">=3.9"
 license = { text = "MIT" }
